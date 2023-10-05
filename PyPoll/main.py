@@ -1,7 +1,7 @@
 import os
 import csv
 
-pypollcsv=os.path.join('Resources','election_data.csv')
+pypollcsv=os.path.join("Resources","election_data.csv")
 
 candidate1_votes = 0
 candidate2_votes = 0  
