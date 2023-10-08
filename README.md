@@ -1,15 +1,16 @@
 # module-3-python
  pybank mainpy
 
-  # importing csv
+  importing csv
+  
  import os
 import csv
 
-  # setting path
+  setting path
 
 csvpath = os.path.join("Resources","budget_data.csv")
 
-  # setting lists and variables
+  setting lists and variables
 
 months=[]
 changes=[]
@@ -22,13 +23,14 @@ TotalProfitChange=0
 MonthCount = 0
 PLChange= 0
 
-  # opening csv
+  opening csv
 with open(csvpath, newline="") as csvfile:
     csv_reader = csv.reader(csvfile, delimiter=",")
- # set header
+ set header
     header= next(csvfile)
 
-# finding neccessary values
+finding neccessary values
+
     for row in csv_reader:
 
     
@@ -50,7 +52,9 @@ with open(csvpath, newline="") as csvfile:
 
 ChangeSum= sum(changes)
 AverageChange= round(ChangeSum/(MonthCount-1),2)
-  # finding max and min and change values
+
+  finding max and min and change values
+  
 max_change= max(changes)
 max_loss= min(changes)
 max_change_index=changes.index(max_change)
@@ -59,7 +63,8 @@ best_month= months[max_change_index]
 worst_month=months[max_loss_index]  
 
 
-  # printing values to terminal
+  printing values to terminal
+  
 print("Financial Analysis\n")
 print("----------------------------\n")
 print(f"Total Months: {MonthCount}\n")
@@ -68,7 +73,8 @@ print(f"Average Change: ${AverageChange}/n")
 print(f"Greatest Increase in Profits: {best_month} (${max_change})\n")
 print(f"Greatest Decrease in Losses: {worst_month} (${max_loss})\n")
 
-  # exporting results
+  exporting results
+  
 newbudget_file= os.path.join("Analysis", "budget_data.txt")
 with open(newbudget_file, "w") as outfile:
 
